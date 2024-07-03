@@ -1,0 +1,23 @@
+{
+  "name": "playwright-salesforce",
+  "version": "1.0.0",
+  "description": "",
+  "main": "data.js",
+  "dependencies": {
+    "@playwright/test": "^1.45.1",
+    "convert-excel-to-json": "^1.7.0",
+    "jsforce": "^1.10.1",
+    "mochawesome": "^6.2.2",
+    "playwright": "^1.45.0",
+    "puppeteer": "^22.12.0"
+  },
+  "devDependencies": {
+    "mocha": "^9.1.0",
+    "typescript": "^5.5.3"
+  },
+  "scripts": {
+    "test": "mocha unitTest.js --timeout 100000"
+  },
+  "author": "",
+  "license": "ISC"
+}
