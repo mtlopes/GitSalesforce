@@ -1,24 +1,19 @@
 name: Playwright Tests
 
-on: [push, pull_request]
+on:
+  push:
+    branches:
+      - main
+      - primeirabranch  # ajuste conforme suas necessidades
 
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-    - name: Check out repository
-      uses: actions/checkout@v2
+      - uses: actions/checkout@v2
 
-    - name: Setup Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: '16'
+      - name: Install dependencies
+        run: npm install
 
-    - name: Install dependencies
-      run: npm install
-
-    - name: Install Playwright Browsers
-      run: npx playwright install --with-deps
-
-    - name: Run tests with xvfb
-      run: xvfb-run --auto-servernum -- npm test
+      - name: Run tests with xvfb
+        run: xvfb-run npm test
